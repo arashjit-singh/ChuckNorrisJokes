@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ChuckNorrisJokes</string>
+    <string name="no_internet">No internet!</string>
+    <string name="internet_not_available">Your device is not connected to the internet!</string>
+    <string name="random_joke">Random Joke</string>
+    <string name="search_joke">Search Joke</string>
+    <string name="category_list">Category List</string>
+    <string name="label_ok">OK</string>
+    <string name="search_for_a_joke">Search for a Joke</string>
+    <string name="enter_to_search">Search ..... </string>
+    <string name="label_search">Search</string>
+    <string name="enter_search_text">Enter something and Chuck norris will get that Joke for you</string>
+    <string name="no_joke_found">Uh oh!! Chuck Norris cannot find this joke for you.</string>
+</resources>
