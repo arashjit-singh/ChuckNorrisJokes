@@ -16,13 +16,13 @@ import com.chucknorrisjokes.utils.UtilityClass
 class SelectCategoryTypeDialogue : DialogFragment() {
 
     companion object {
-        val TAG = "SelectCategoryTypeDialogue"
+        const val TAG = "SelectCategoryTypeDialogue"
     }
 
     lateinit var binding: LayoutRecyclerViewBinding
-    val mContext by lazy { context }
-    var mVehicleList: (ArrayList<String>)? = null
-    var mAdapter: CategoryListAdapter? = null
+    private val mContext by lazy { context }
+    private var mVehicleList: (ArrayList<String>)? = null
+    private var mAdapter: CategoryListAdapter? = null
     var callback: CategoryListAdapter.ItemClick? = null
 
     private val layoutManager: LinearLayoutManager by lazy { LinearLayoutManager(binding.categoryRecyclerView.context) }

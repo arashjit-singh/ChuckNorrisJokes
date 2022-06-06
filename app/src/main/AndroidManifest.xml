@@ -13,6 +13,9 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.ChuckNorrisJokes">
         <activity
+            android:name=".ui.JokeListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity

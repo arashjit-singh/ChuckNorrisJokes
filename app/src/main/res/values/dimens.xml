@@ -12,5 +12,6 @@
     <dimen name="dp120">120dp</dimen>
     <dimen name="text_size_16sp">16sp</dimen>
     <dimen name="text_size_13_5sp">13.5sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

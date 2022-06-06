@@ -1,27 +1,27 @@
 package com.chucknorrisjokes.ui.dialogue
 
-import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.chucknorrisjokes.R
 import com.chucknorrisjokes.databinding.JokeRowItemBinding
-import com.chucknorrisjokes.utils.extensions.toPx
-import com.chucknorrisjokes.utils.extensions.updateHeight
+import com.chucknorrisjokes.model.JokeDataClass
+import com.chucknorrisjokes.room.AppExecutors
+import com.chucknorrisjokes.room.DocumentsRoomDatabase
+import com.chucknorrisjokes.utils.UtilityClass
 
 
 class ShowJokeDialogue : DialogFragment() {
 
     companion object {
-        val TAG = "ShowJokeDialogue"
+        const val TAG = "ShowJokeDialogue"
     }
 
     lateinit var binding: JokeRowItemBinding
+    private lateinit var joke: JokeDataClass
 
     override fun onStart() {
         super.onStart()
@@ -40,14 +40,15 @@ class ShowJokeDialogue : DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.joke_row_item, container, false)
 
         if (arguments != null) {
-            binding.jokeTxtVw.text = arguments!!.getString("joke")
+            joke = arguments!!.getSerializable("joke") as JokeDataClass
+            binding.jokeTxtVw.text = joke.value
         }
 
-        return binding.getRoot()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,6 +56,22 @@ class ShowJokeDialogue : DialogFragment() {
         binding.okBtn.setOnClickListener {
             dismiss()
 
+        }
+
+        binding.saveBtn.setOnClickListener {
+
+            AppExecutors.getInstance().diskIO().execute {
+                val db: DocumentsRoomDatabase =
+                    DocumentsRoomDatabase.getDatabase(binding.jokeTxtVw.context)
+                db.jokeDao().insertJoke(joke)
+                activity?.runOnUiThread {
+                    UtilityClass.showToast(
+                        binding.root.context,
+                        getString(R.string.confirm_saved_local)
+                    )
+                    dismiss()
+                }
+            }
         }
     }
 

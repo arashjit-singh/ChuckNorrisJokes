@@ -1,0 +1,34 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="dataClass"
+            type="com.chucknorrisjokes.model.JokeDataClass" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/joke_txtVw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/dp10"
+            android:textAppearance="@style/LatoSemiBold"
+            android:textColor="@color/black"
+            android:text="@{dataClass.value}"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </LinearLayout>
+
+</layout>

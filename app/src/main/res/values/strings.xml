@@ -11,4 +11,16 @@
     <string name="label_search">Search</string>
     <string name="enter_search_text">Enter something and Chuck norris will get that Joke for you</string>
     <string name="no_joke_found">Uh oh!! Chuck Norris cannot find this joke for you.</string>
+    <string name="label_save">Save</string>
+    <string name="title_activity_joke_list">JokeListActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="saved_jokes">Saved Jokes</string>
+    <string name="confirm_saved_local">Joke Saved to local</string>
 </resources>

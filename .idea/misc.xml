@@ -6,14 +6,19 @@
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/bg_gradient.xml" value="0.26614583333333336" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/chuck_norris.xml" value="0.26614583333333336" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/ic_cancel.xml" value="0.24074074074074073" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/ic_done.xml" value="0.21354166666666666" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/ic_download.xml" value="0.2574074074074074" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/ic_icon_refresh.xml" value="0.24074074074074073" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/rectangle_drawable_blue.xml" value="0.26614583333333336" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/drawable/splash_background.xml" value="0.2" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/activity_joke_list.xml" value="0.14583333333333334" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/item_joke_row_item.xml" value="0.2" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/joke_row_item.xml" value="0.264" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/layout_recycler_view.xml" value="0.2" />
         <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/layout_search_joke.xml" value="0.25" />
-        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/text_row_item.xml" value="0.19375" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/layout/text_row_item.xml" value="0.144" />
+        <entry key="..\:/Personal/Projects/ChuckNorrisJokes/app/src/main/res/menu/ic_main_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

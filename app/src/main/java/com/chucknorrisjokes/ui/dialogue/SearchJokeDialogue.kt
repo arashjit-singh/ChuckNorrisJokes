@@ -14,10 +14,6 @@ import com.chucknorrisjokes.utils.UtilityClass
 
 class SearchJokeDialogue : DialogFragment() {
 
-    companion object {
-        val TAG = "SearchJokeDialogue"
-    }
-
     lateinit var binding: LayoutSearchJokeBinding
     lateinit var callback: OnSearchJokeInterface
 
@@ -38,10 +34,10 @@ class SearchJokeDialogue : DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.layout_search_joke, container, false)
 
-        return binding.getRoot()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
