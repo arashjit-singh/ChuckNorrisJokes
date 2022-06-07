@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chucknorrisjokes.R
 import com.chucknorrisjokes.adapters.CategoryListAdapter
+import com.chucknorrisjokes.constants.Constants
 import com.chucknorrisjokes.databinding.LayoutRecyclerViewBinding
 import com.chucknorrisjokes.utils.UtilityClass
 
@@ -53,8 +54,8 @@ class SelectCategoryTypeDialogue : DialogFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.layout_recycler_view, container, false)
         if (arguments != null) {
             mVehicleList =
-                arguments!!.getSerializable("categoryList") as ArrayList<String>?
-            binding.headerTxtVw.text = arguments!!.getSerializable("header") as String
+                arguments!!.getSerializable(Constants.BUNDLE_CONSTANT_LIST) as ArrayList<String>?
+            binding.headerTxtVw.text = arguments!!.getSerializable(Constants.BUNDLE_CONSTANT_HEADER) as String
         }
         return binding.root
     }

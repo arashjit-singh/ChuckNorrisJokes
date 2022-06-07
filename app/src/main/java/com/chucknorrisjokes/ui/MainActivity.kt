@@ -13,6 +13,7 @@ import com.chucknorrisjokes.adapters.CategoryListAdapter
 import com.chucknorrisjokes.base.BaseActivity
 import com.chucknorrisjokes.callbacks.OnClickHandlerInterface
 import com.chucknorrisjokes.callbacks.OnSearchJokeInterface
+import com.chucknorrisjokes.constants.Constants
 import com.chucknorrisjokes.databinding.ActivityMainBinding
 import com.chucknorrisjokes.model.JokeDataClass
 import com.chucknorrisjokes.ui.dialogue.SearchJokeDialogue
@@ -50,8 +51,7 @@ class MainActivity : BaseActivity(), OnClickHandlerInterface, CategoryListAdapte
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_saved_jokes -> {
-            // User chose the "downloads" item, show the app settings UI...
-            // Start your app main activity
+            // Start your app joke list activity
             startActivity(
                 Intent(this, JokeListActivity::class.java),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle(),
@@ -88,7 +88,7 @@ class MainActivity : BaseActivity(), OnClickHandlerInterface, CategoryListAdapte
     override fun onJokeCategoryClick(view: View) {
         if (checkConnectivityAndShowDialogue()) {
             mViewModel.getListOfCategories().observe(this, { categories ->
-                showList(categories, "List of Categories", this)
+                showList(categories, getString(R.string.label_list), this)
             })
         }
     }
@@ -139,8 +139,8 @@ class MainActivity : BaseActivity(), OnClickHandlerInterface, CategoryListAdapte
         dialog.callback = callback
         val ft = mContext.supportFragmentManager.beginTransaction()
         val args = Bundle()
-        args.putSerializable("categoryList", mList as Serializable)
-        args.putString("header", header)
+        args.putSerializable(Constants.BUNDLE_CONSTANT_LIST, mList as Serializable)
+        args.putString(Constants.BUNDLE_CONSTANT_HEADER, header)
         dialog.arguments = args
         dialog.isCancelable = true
         dialog.show(ft, SelectCategoryTypeDialogue.TAG)

@@ -1,6 +1,6 @@
 package com.chucknorrisjokes.retrofit
 
-import com.chucknorrisjokes.constants.NetworkConstants
+import com.chucknorrisjokes.constants.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,7 +18,7 @@ object RetrofitClient {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl(NetworkConstants.BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(mOkHttpClient)
             .build()

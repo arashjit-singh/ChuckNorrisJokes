@@ -33,7 +33,7 @@ class JokeListActivity : BaseActivity(), JokesListAdapter.ItemClick {
         binding = DataBindingUtil.setContentView(
             this, com.chucknorrisjokes.R.layout.activity_joke_list
         )
-        setToolbarWithBackIcon(binding.toolbar, "Saved Jokes")
+        setToolbarWithBackIcon(binding.toolbar, getString(R.string.label_saved_jokes))
         getAllJokesFromDb()
     }
 
