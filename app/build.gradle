@@ -91,4 +91,5 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
     // To use Kotlin annotation processing tool (kapt)
-    kapt("androidx.room:room-compiler:$roomVersion")}
+    kapt("androidx.room:room-compiler:$roomVersion")
+}

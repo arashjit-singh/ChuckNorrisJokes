@@ -10,6 +10,8 @@ import com.chucknorrisjokes.model.JokeDataClass
 class JokesListAdapter(private var jokeList: List<JokeDataClass>) :
     RecyclerView.Adapter<JokesListAdapter.ViewHolder>() {
 
+    var callback: ItemClick? = null
+
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -38,6 +40,7 @@ class JokesListAdapter(private var jokeList: List<JokeDataClass>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+        viewHolder.binding.clickListener = callback
         viewHolder.bind(jokeList[position])
     }
 
@@ -46,5 +49,18 @@ class JokesListAdapter(private var jokeList: List<JokeDataClass>) :
 
     fun updateData(list: List<JokeDataClass>?) {
         this.jokeList = list!!
+    }
+
+
+    interface ItemClick {
+        fun onItemClick(joke: JokeDataClass)
+    }
+
+    fun removeItemFromList(joke: JokeDataClass) {
+        jokeList.toMutableList().apply {
+            (jokeList as ArrayList).remove(joke)
+            notifyDataSetChanged()
+        }
+
     }
 }

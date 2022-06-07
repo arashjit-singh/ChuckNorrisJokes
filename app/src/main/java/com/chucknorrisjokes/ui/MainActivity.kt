@@ -105,7 +105,7 @@ class MainActivity : BaseActivity(), OnClickHandlerInterface, CategoryListAdapte
         if (checkConnectivityAndShowDialogue()) {
             mViewModel.searchForJoke(string.trim()).observe(this, { categories ->
                 val jokeList: ArrayList<String> = arrayListOf()
-                if (jokeList.isNotEmpty()) {
+                if (categories != null) {
                     for (item in categories.result) {
                         jokeList.add(item.value)
                     }

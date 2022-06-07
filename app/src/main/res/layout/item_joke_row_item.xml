@@ -6,6 +6,10 @@
             name="dataClass"
             type="com.chucknorrisjokes.model.JokeDataClass" />
 
+        <variable
+            name="clickListener"
+            type="com.chucknorrisjokes.adapters.JokesListAdapter.ItemClick" />
+
     </data>
 
     <LinearLayout
@@ -24,10 +28,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="@dimen/dp10"
+            android:text="@{dataClass.value}"
             android:textAppearance="@style/LatoSemiBold"
             android:textColor="@color/black"
-            android:text="@{dataClass.value}"
             android:textSize="@dimen/text_size_16sp" />
+
+        <ImageButton
+            android:id="@+id/delete_btn"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:onClick="@{() -> clickListener.onItemClick(dataClass)}"
+            android:src="@drawable/ic_delete" />
 
     </LinearLayout>
 

@@ -23,4 +23,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="saved_jokes">Saved Jokes</string>
     <string name="confirm_saved_local">Joke Saved to local</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="dismissed">Dismissed</string>
+    <string name="confirm_joke_deleted">Joke has been deleted</string>
 </resources>
