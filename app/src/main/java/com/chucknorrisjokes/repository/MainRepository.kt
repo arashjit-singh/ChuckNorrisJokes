@@ -14,8 +14,9 @@ import retrofit2.Response
 
 class MainRepository {
 
-    private var apiService: ApiService =
+    private val apiService: ApiService by lazy {
         RetrofitClient.getRetrofitInstance().create(ApiService::class.java)
+    }
 
     fun getRandomJoke(): LiveData<JokeDataClass> {
         val data = MutableLiveData<JokeDataClass>()
